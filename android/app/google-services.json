@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "807224230144",
+    "project_id": "app-lista-tarefa-f002d",
+    "storage_bucket": "app-lista-tarefa-f002d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:807224230144:android:cf3635685280d73d8133e5",
+        "android_client_info": {
+          "package_name": "com.example.firebase"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDiSCB5UIe4blD_zooL200LvmACKYGnenE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
