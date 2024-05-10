@@ -10,14 +10,8 @@ class TarefaController {
     FirebaseFirestore.instance
         .collection('tarefas')
         .add(t.toJson())
-        .then((resultado) => sucesso(
-              context,
-              'Tarefa adicionada com sucesso'
-            ),)
-        .catchError((e) => erro(
-              context,
-              'Não foi possível adicionar a tarefa',
-            ))
+        .then((resultado) => sucesso(context,'Tarefa adicionada com sucesso'),)
+        .catchError((e) => erro(context,'Não foi possível adicionar a tarefa',))
         .whenComplete(() => Navigator.pop(context));
   }
 }
