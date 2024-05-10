@@ -1,29 +1,23 @@
-class Tarefa{
-  //campos do documento
-  final String uid;
-  final String titulo;
-  final String descricao;
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter/material.dart';
 
-  Tarefa(this.uid,this.titulo,this.descricao);
+import '../model/tarefa.dart';
+import '../view/util.dart';
 
-  //
-  // Transforma um OBJETO em JSON
-  //
-  Map<String,dynamic> toJson(){
-    return <String,dynamic>{
-      'uid' : uid,
-      'titulo': titulo,
-      'descricao': descricao,
-    };
+class TarefaController {
+  //Adicionar uma tarefa no Firestore
+  void adicionar(context, Tarefa t) {
+    FirebaseFirestore.instance
+        .collection('tarefas')
+        .add(t.toJson())
+        .then((resultado) => sucesso(
+              context,
+              'Tarefa adicionada com sucesso'
+            ),)
+        .catchError((e) => erro(
+              context,
+              'Não foi possível adicionar a tarefa',
+            ))
+        .whenComplete(() => Navigator.pop(context));
   }
-
-  //
-  // Transforma um JSON em OBJETO
-  //
-  factory Tarefa.fromJson(Map<String,dynamic> json){
-    return Tarefa(json['uid'],json['titulo'],json['descricao'],);
-  }
-
-
-
 }
